@@ -1,0 +1,51 @@
+.form{
+    position: relative;
+    left: 75vh;
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    width: 500px;
+    height: 700px;
+    margin: 10px;
+    margin-top: 100px;
+    border-radius: 50px;
+    background-color: rgba(0, 128, 0, 0.2);
+    
+ }
+ 
+ .form_img{
+    background-image:url("./../../para_rick/titu.jpg") ;
+    background-size: contain;
+    height: 98px;
+    width: 300px;
+    
+ }
+
+ .error{
+    color: red;
+    font-size: 20px;
+ }
+ 
+
+ .boton_form{
+    height: 30px;
+    width: 100px;;
+    background-color: gray;
+    opacity: .7;
+    margin-left: 100px;
+ }
+ 
+
+ 
+.label_form{
+   font-size: 30px;
+
+  
+}
+
+.input_form{
+   height: 30px;
+   opacity: .6;
+   
+}
+

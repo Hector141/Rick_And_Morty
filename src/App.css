@@ -1,3 +1,67 @@
-.App {
-   text-align: center;
+body {
+   background-image:url("./para_rick/fondo.jpg") ;
+   background-size: cover;
+   background-attachment:fixed ;
+   background-repeat: no-repeat;
 }
+
+.App{
+   position: relative;
+   text-align: center;
+  
+}
+
+
+
+
+
+.bar{
+   position: absolute;
+  display: flex;
+  right: 40px;
+  margin-top: 10px;
+  height: 30px;
+
+}
+
+   
+.bar_b {
+background-color: rgba(8, 241, 8);
+font-size: 20px;
+border-radius: 5px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.bar_ser{
+   background-color: rgba(0, 128, 0, .8);
+   font-size: 15px;
+   font-weight: bold;
+
+}
+
+
+.label_form{
+   font-size: 30px;
+
+  
+}
+
+.input_form{
+   height: 30px;
+   opacity: .6;
+   
+}
+
+.boton_form{
+   height: 30px;
+   width: 100px;;
+   background-color: gray;
+   opacity: .7;
+   margin-left: 100px;
+}
+
+
+
+
+

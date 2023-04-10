@@ -1,0 +1,48 @@
+.card_x{
+    position: absolute;
+    margin: 10px;
+    font-weight: bold;
+    background-color: transparent;
+    border: transparent;
+    font-size: 20px;
+    color: rgb(27, 27, 27);
+ }
+ 
+ .card_x:hover{
+    cursor: pointer;
+ }
+ 
+
+ .card_cont{
+    padding-left: 10px;
+    color: white
+ }
+ 
+ 
+.card_img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+ }
+
+ 
+.card{
+    flex-basis: calc(20% - 20px); 
+    border: 3px rgb(33, 231, 15) solid;
+    border-radius: 20px;
+    height: 700px;
+    width: 300px;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    text-align: left;
+    background-image: url("./../../para_rick/fond.jpg");
+    background-size: cover;
+ 
+ 
+ }
+ 
+ 
+ 

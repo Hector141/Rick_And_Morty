@@ -2,12 +2,17 @@ import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useState,useEffect } from "react"
 
+
+
+const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
+const Apy_key = "b601c19982bd.d1ff5d01c384f0beea8b"
+
 const Detail = ()=> {
     const {id} = useParams()
     const [character, setCharacter] = useState({})
 
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+        axios(`${URL_BASE}/${id}?key=${Apy_key}`).then(({ data }) => {
            if (data.name) {
               setCharacter(data);
            } else {
@@ -20,12 +25,12 @@ const Detail = ()=> {
     return(
         <div>
             <h1>Detail</h1>
-         <h2 >{character.name}</h2>
-         <h2>{character.status}</h2>
-         <h2>{character.species}</h2>
-         <h2>{character.gender}</h2>
-         <h2>{character.origin?.name}</h2>
-         <img src={character.image} alt={character.name} />
+         <h2 >{character?.name}</h2>
+         <h2>{character?.status}</h2>
+         <h2>{character?.species}</h2>
+         <h2>{character?.gender}</h2>
+         <h2>{character?.origin?.name}</h2>
+         <img src={character?.image} alt={character.name} />
         </div>
     )
 }

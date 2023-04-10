@@ -1,0 +1,38 @@
+
+.cont_about {
+    margin: 70px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px; 
+    align-items: center;
+  }
+  
+  .avatar {
+    grid-row: 1 / span 2; 
+    border-radius: 80px;
+    border: 3px rgb(33, 231, 15) solid;
+  }
+  
+  .h1_about {
+   text-align: left;
+   text-shadow: 2px 2px 0 rgb(245, 15, 15);
+   color: white;
+  }
+  
+  .p_about {
+    grid-column: 2;
+    text-align: left;
+    font-size: 30px;
+    margin-right: 200px;
+    text-shadow: 2px 2px 0 rgb(245, 15, 15);
+    color: white;
+  }
+ 
+  .cont_lore{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 900px;
+    border-radius: 40px;
+  }
+ 
+ 

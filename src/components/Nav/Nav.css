@@ -1,0 +1,35 @@
+.nav{
+    background-image:url("./../../para_rick/titu.jpg") ;
+    background-size: contain;
+    height: 6vh;
+ 
+ }
+ 
+ 
+.about .b1{
+    position: absolute;
+    left: 100px;
+    margin-top: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+    font-size: 20px;
+    background-color: rgba(8, 241, 8);
+    font-weight: bold;
+    cursor: pointer;
+    
+ }
+ 
+ .home .b2{
+    margin-top: 10px;
+    height: 30px;
+    width: 80px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgba(8, 241, 8);
+    font-weight: bold;
+    cursor: pointer;
+ }
+ 

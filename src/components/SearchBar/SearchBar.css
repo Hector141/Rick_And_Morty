@@ -1,0 +1,25 @@
+.bar{
+    position: absolute;
+   display: flex;
+   right: 40px;
+   margin-top: 10px;
+   height: 30px;
+ 
+ }
+ 
+    
+ .bar_b {
+ background-color: rgba(8, 241, 8);
+ font-size: 20px;
+ border-radius: 5px;
+ font-weight: bold;
+ cursor: pointer;
+ }
+ 
+ .bar_ser{
+    background-color: rgba(0, 128, 0, .8);
+    font-size: 15px;
+    font-weight: bold;
+ 
+ }
+ 
