@@ -8,7 +8,7 @@
  
 .about .b1{
     position: absolute;
-    left: 100px;
+    left: 180px;
     margin-top: 10px;
     border: 2px solid black;
     border-radius: 5px;
@@ -33,3 +33,34 @@
     cursor: pointer;
  }
  
+.logout{
+
+   height: 30px;
+   position: absolute;
+   left: 10px;
+   margin-top: 10px;
+    width: 120px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgba(8, 241, 8);
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+
+.favorite .b3{
+   position: absolute;
+   right: 350px;
+   margin-top: 10px;
+   height: 30px;
+   width: 120px;
+   font-size: 20px;
+   border: 2px solid black;
+   border-radius: 5px;
+   background-color: rgba(8, 241, 8);
+   font-weight: bold;
+   cursor: pointer;
+
+}

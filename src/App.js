@@ -9,6 +9,7 @@ import About from './components/About/About';
 import Detail from './components/Detail';
 import Form from './components/Form/Form';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Favorites from './components/Favorites/Favorites';
 
 
 const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
@@ -54,7 +55,7 @@ function App() {
    return (
      <div className="App">
       {
-        location.pathname !== "/" ?<Nav onSearch={onSearch}></Nav>:null
+        location.pathname !== "/" ? <Nav onSearch={onSearch} access={access} setAccess={setAccess} /> : null
       }
        <Routes>
          <Route path="/" element={<Form login={login}  />} />
@@ -62,6 +63,7 @@ function App() {
            path="/home"
            element={<Cards characters={characters} onClose={onClose} />}
          ></Route>
+         <Route path="/favorites" element={<Favorites />} />
          <Route path="/About" element={<About />}></Route>
          <Route path="/Detail/:id" element={<Detail />}></Route>
        </Routes>

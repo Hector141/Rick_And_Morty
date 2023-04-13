@@ -12,37 +12,57 @@
     cursor: pointer;
  }
  
-
- .card_cont{
-    padding-left: 10px;
-    color: white
+ .card_cont {
+   opacity: 0;
  }
  
+ .card:hover .card_cont {
+   opacity: 1;
+   transition: opacity 3s;
+ }
+ 
+ .card_cont {
+   transition: opacity 0s;
+ }
  
 .card_img{
     width: 100%;
-    height: auto;
+    height: 300px;
     object-fit: cover;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+    border-radius: 15px;
  }
 
+ .card{
+   flex-basis: calc(20% - 20px); 
+   border: 3px rgb(33, 231, 15) solid;
+   border-radius: 20px;
+   height: 300px;
+   width: 300px;
+   display: inline-block;
+   margin: 20px;
+   position: relative;
+   transition: ease 1s;
+   background-image: url("./../../para_rick/fond.jpg"); 
+   background-size: cover;
+}
+
+.card:hover {
+    height: 500px;
+    text-align: left; 
+    transition: ease 1s;
+}
+
  
-.card{
-    flex-basis: calc(20% - 20px); 
-    border: 3px rgb(33, 231, 15) solid;
-    border-radius: 20px;
-    height: 700px;
-    width: 300px;
-    display: inline-block;
-    margin: 20px;
-    position: relative;
-    text-align: left;
-    background-image: url("./../../para_rick/fond.jpg");
-    background-size: cover;
  
- 
- }
- 
- 
- 
+.btn_fav{
+   position: absolute;
+   right: 0px;
+   margin: 5px;
+   background-color: transparent;
+   border-color:transparent ;
+   font-size: 25px;
+   transition: font-size .5s ease;
+}
+.btn_fav:hover{
+font-size: 30px;
+}
