@@ -4,17 +4,17 @@ import { addFav, removeFav } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
-function Card({ id, name, status, species, gender, origin, image, onClose, myFavorites, addFav, removeFav }) {
+function Card({ id, name, status, species, gender, origin, image, onClose, allCharacters, addFav, removeFav }) {
   
 const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
-    myFavorites.forEach((fav) => {
+    allCharacters.forEach((fav) => {
       if (fav.id === id) {
         setIsFav(true);
       }
     });
-  }, [myFavorites,id]);
+  }, [allCharacters,id]);
 
   const handleFavorite = () => {
     if (isFav) {
@@ -49,7 +49,7 @@ const [isFav, setIsFav] = useState(false);
 
 const mapStateToProps = (state) => {
   return {
-    myFavorites: state.myFavorites
+    allCharacters: state.allCharacters
   }
 }
 

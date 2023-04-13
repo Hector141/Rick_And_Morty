@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { filterCards, orderCards, showAllFavorites } from "../../redux/actions";
 import { useState } from "react";
 
-function Favorites({ allCharacters, removeFav }) {
+function Favorites({ myFavorites, removeFav }) {
   const handleCardClose = (id) => {
     removeFav(id);
   }
@@ -50,7 +50,7 @@ function handleFilter(event) {
 
       <h1>My Favorites</h1>
       <div className="card-container">
-        {allCharacters?.map((favorite) => (
+        {myFavorites?.map((favorite) => (
           <Card 
             key={favorite.id}
             id={favorite.id}
@@ -69,7 +69,7 @@ function handleFilter(event) {
 
 const mapStateToProps = (state) => {
   return {
-    allCharacters: state.allCharacters,
+    myFavorites: state.myFavorites,
   };
 };
 
