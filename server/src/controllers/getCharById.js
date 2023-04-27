@@ -9,16 +9,20 @@ async function getCharById(req, res) {
     const { id } = req.params;
     const response = await axios.get(`${URL}/character/${id}`);
 
+    if(!response.data || !response.data.name) {
+      throw new Error("ID Not found");
+    }
+
     const { status, name, species, origin, image, gender } = response.data;
     res.json({ id, status, name, species, origin, image, gender });
-  } catch (error) {
-    if (error.response && error.response.status === 404) {
-      res.status(404).send('Not Found');
-    } else {
-      res.status(500).send({ message: error.message }); //axios error
-    } 
+  } catch(error) {
+    error.message.includes("ID")
+    ? res.status(404).send(error.message)
+    : res.status(500).send(error.message)
   }
 }
+
+
 
 // const getCharById = async (req,res) => {
 //   try{
