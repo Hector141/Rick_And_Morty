@@ -17,9 +17,8 @@ const postUser = async (req, res) => {
         defaults: { password },
       });
   
-      // Si el usuario se creó correctamente, lo enviamos como respuesta
       if (created) {
-        return res.status(201).json(user);
+        return res.json({ access: true });
       }
   
       // Si el usuario ya existía, enviamos un mensaje de error

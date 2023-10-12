@@ -5,7 +5,8 @@ import { removeFav } from "../../redux/actions";
 import './favorite.css'
 import { useDispatch } from "react-redux";
 import { filterCards, orderCards, showAllFavorites } from "../../redux/actions";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { fetchFavorites } from '../../redux/actions';
 
 function Favorites({ myFavorites, removeFav }) {
   const handleCardClose = (id) => {
@@ -17,6 +18,12 @@ function Favorites({ myFavorites, removeFav }) {
 
 
 const dispatch = useDispatch();
+
+
+useEffect(() => {
+  // Al cargar la aplicación, obtén los favoritos desde el servidor
+  dispatch(fetchFavorites());
+}, [dispatch]);
 
 function handleOrder(event){
   dispatch(orderCards(event.target.value))

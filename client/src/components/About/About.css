@@ -35,4 +35,8 @@
     border-radius: 40px;
   }
  
- 
+ .about_imgs{
+  height: 80px;
+  margin: 40px;
+  border-radius: 5px;
+ }

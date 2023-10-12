@@ -1,5 +1,4 @@
-const users = require("../models/User")
-
+const { User } = require("../DB_connection");
 
 exports.login = async (req, res) => {
   const { email, password } = req.query;
@@ -9,16 +8,10 @@ exports.login = async (req, res) => {
   }
 
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ where: { email, password } });
 
     if (!user) {
-      return res.status(404).json({ message: 'Usuario no encontrado' });
-    }
-
-    const isPasswordValid = await user.comparePassword(password);
-
-    if (!isPasswordValid) {
-      return res.status(403).json({ message: 'Contraseña incorrecta' });
+      return res.status(404).json({ message: 'Credenciales incorrectas' });
     }
 
     res.json({ access: true });

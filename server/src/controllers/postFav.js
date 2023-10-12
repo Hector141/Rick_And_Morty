@@ -1,27 +1,31 @@
-const { Favorite } = require("../models");
+const { Favorite } = require("../DB_connection");
 
-const postFav = async (req, res) => {
-  const { name, origin, status, image, species, gender } = req.body;
-
-  // Validamos que se reciban todos los datos
-  if (!name || !origin || !status || !image || !species || !gender) {
-    return res.status(401).json({ message: "Faltan datos" });
-  }
-
+const createFavorite = async (req, res) => {
   try {
-    // Guardamos el personaje en la base de datos
-    const favorite = await Favorite.findOrCreate({
-      where: { name },
-      defaults: { origin, status, image, species, gender },
+    const {id, name, image, status, gender, origin, species } = req.body;
+
+    // Verifica que los campos requeridos estén presentes
+    if (!name) {
+      return res.status(400).json({ message: 'El campo "name" es obligatorio' });
+    }
+
+    // Crea un nuevo elemento en Favoritos
+    const newFavorite = await Favorite.create({
+      id,
+      name,
+      image,
+      status,
+      gender,
+      origin,
+      species,
     });
 
-    // Buscamos todos los personajes favoritos
-    const favorites = await Favorite.findAll();
-
-    res.json(favorites);
+    // Envía la respuesta con el nuevo elemento creado
+    res.status(201).json(newFavorite);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Error al agregar elemento a Favoritos' });
   }
 };
 
-module.exports = { postFav };
+module.exports = { createFavorite };

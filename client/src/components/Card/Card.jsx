@@ -4,13 +4,13 @@ import { addFav, removeFav } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 
-function Card({ id, name, status, species, gender, origin, image, onClose, allCharacters, addFav, removeFav }) {
+function Card({ id, name, status, species, gender, origin, image, onClose, allCharacters, addFav, removeFav}) {
   
 const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
-    allCharacters.forEach((fav) => {
-      if (fav.id === id) {
+    allCharacters.forEach((element) => {
+      if (Number(element.id) === Number(id)) {
         setIsFav(true);
       }
     });
@@ -27,11 +27,13 @@ const [isFav, setIsFav] = useState(false);
   }
 
 
-
   return (
     <div className="card">
       <button className="card_x" onClick={() => onClose(id)}>X</button>
-      <button className="btn_fav" onClick={handleFavorite}>{isFav ?"❤️" :"🤍" }</button>
+      <button className={`btn_fav ${isFav ? 'active' : ''}`} onClick={handleFavorite}>
+       {isFav ? '❤️' : '🤍'}
+      </button>
+
   
       <Link to={`/detail/${id}`} >
         <img className="card_img" src={image} alt={name} />
@@ -49,7 +51,7 @@ const [isFav, setIsFav] = useState(false);
 
 const mapStateToProps = (state) => {
   return {
-    allCharacters: state.allCharacters
+    allCharacters: state.myFavorites
   }
 }
 

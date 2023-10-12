@@ -29,3 +29,19 @@ body {
  }
 
 
+ .button-visitor {
+   border: 1px solid black;
+   border-radius: 3px;
+   color: rgb(5, 5, 5);
+   background-color: rgb(26, 131, 32);
+   font-weight: bold;
+   font-size: 18px;
+   margin: 10px;
+   width: 180px;
+   transition: background-color 0.3s, color 0.3s;
+ }
+ 
+ .button-visitor:hover {
+   background-color: rgba(46, 176, 55, 0.897);  
+ }
+ 

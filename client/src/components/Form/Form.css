@@ -1,6 +1,10 @@
+.back_form{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
 .form{
-    position: relative;
-    left: 75vh;
     align-items: center;
     display: grid;
     justify-content: center;
@@ -29,9 +33,11 @@
 
  .boton_form{
     height: 30px;
-    width: 100px;;
+    width: 120px;;
     background-color: rgb(26, 131, 32);
-    margin-left: 100px;
+    margin: auto;
+    border-radius: 3px;
+    font-weight: bold;
  }
  
 
@@ -46,5 +52,11 @@
    height: 30px;
    opacity: .6;
    
+}
+
+.buttons-containt-form{
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
